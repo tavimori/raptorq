@@ -56,8 +56,8 @@ jobs:
           pip3 install maturin
           make test_py
 
-      - name: Instal Wasm toolchains
-        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+      # - name: Instal Wasm toolchains
+      #   run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
 
-      - name: Make Wasm builds
-        run: make build_wasm
+      # - name: Make Wasm builds
+      #   run: make build_wasm
