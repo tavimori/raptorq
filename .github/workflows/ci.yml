@@ -2,6 +2,8 @@ name: CI
 
 on:
   pull_request:
+    branches: 
+      - master
   push: # required for actions/cache to work
     branches:
       - master
@@ -53,3 +55,9 @@ jobs:
           pip3 install --upgrade pip
           pip3 install maturin
           make test_py
+
+      - name: Instal Wasm toolchains
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+
+      - name: Make Wasm builds
+        run: make build_wasm
